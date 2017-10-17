@@ -32,7 +32,6 @@ class Floor extends PureComponent {
 
     render() {
         const { item, navigate } = this.props
-
         return (
             <View style={styles.container}>
                 <TouchableWithoutFeedback onPress={() => { this.setState({ visible: true }) }}>
