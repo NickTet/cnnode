@@ -59,7 +59,8 @@ class Login extends PureComponent{
 }
 function mapStateToProps(state) {
     const { data, loading } = state.zone;
-    return { data, loading };
+    const {accesstoken}=state.home;
+    return { data, loading ,accesstoken};
 }
 
 function mapDispatchToProps(dispatch) {

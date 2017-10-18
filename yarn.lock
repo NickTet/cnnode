@@ -45,6 +45,12 @@ absolute-path@^0.0.0:
   version "0.0.0"
   resolved "http://r.cnpmjs.org/absolute-path/download/absolute-path-0.0.0.tgz#a78762fbdadfb5297be99b15d35a785b2f095bf7"
 
+ac-qrcode@^1.0.1:
+  version "1.0.1"
+  resolved "http://r.cnpmjs.org/ac-qrcode/download/ac-qrcode-1.0.1.tgz#46978c21e809fe5f603eeb6f14a2b7511c8dcd90"
+  dependencies:
+    react-native-camera "^0.7.0"
+
 accepts@~1.2.12, accepts@~1.2.13:
   version "1.2.13"
   resolved "http://r.cnpmjs.org/accepts/download/accepts-1.2.13.tgz#e5f1f3928c6d95fd96558c36ec3d9d0de4a6ecea"
@@ -3987,11 +3993,9 @@ react-native:
     xmldoc "^0.4.0"
     yargs "^6.4.0"
 
-react-native-camera@^0.10.0:
-  version "0.10.0"
-  resolved "http://r.cnpmjs.org/react-native-camera/download/react-native-camera-0.10.0.tgz#5d973c9a8aab95f68aede395ba310eae0c3cecdd"
-  dependencies:
-    prop-types "^15.5.10"
+react-native-camera@^0.7.0:
+  version "0.7.0"
+  resolved "http://r.cnpmjs.org/react-native-camera/download/react-native-camera-0.7.0.tgz#a033a80b73fb1d56c2459a829f65a6f8f1a7328c"
 
 react-native-communications@2.2.1:
   version "2.2.1"
@@ -4056,12 +4060,6 @@ react-native-parsed-text@0.0.18:
   version "0.0.18"
   resolved "http://r.cnpmjs.org/react-native-parsed-text/download/react-native-parsed-text-0.0.18.tgz#b528eb6f1410f552d2e3fd8d80da7ff0a7890c71"
 
-react-native-qrcode-scanner@0.0.22:
-  version "0.0.22"
-  resolved "http://r.cnpmjs.org/react-native-qrcode-scanner/download/react-native-qrcode-scanner-0.0.22.tgz#b045d6ba6413bd379008e6e5aff047e6fbaa95ae"
-  dependencies:
-    prop-types "^15.5.10"
-
 react-native-scrollable-mixin@^1.0.1:
   version "1.0.1"
   resolved "http://r.cnpmjs.org/react-native-scrollable-mixin/download/react-native-scrollable-mixin-1.0.1.tgz#34a32167b64248594154fd0d6a8b03f22740548e"
@@ -4122,9 +4120,9 @@ react-router@^2.8.1:
     loose-envify "^1.2.0"
     warning "^3.0.0"
 
-react-test-renderer@16.0.0-beta.5:
-  version "16.0.0-beta.5"
-  resolved "http://r.cnpmjs.org/react-test-renderer/download/react-test-renderer-16.0.0-beta.5.tgz#6169e2ea96e8d21645662b369c23239974cd1f11"
+react-test-renderer@16.0.0-alpha.12:
+  version "16.0.0-alpha.12"
+  resolved "http://r.cnpmjs.org/react-test-renderer/download/react-test-renderer-16.0.0-alpha.12.tgz#9e4cc5d8ce8bfca72778340de3e1454b9d6c0cc5"
   dependencies:
     fbjs "^0.8.9"
     object-assign "^4.1.0"
@@ -4140,10 +4138,11 @@ react-transform-hmr@^1.0.4:
     global "^4.3.0"
     react-proxy "^1.1.7"
 
-react@16.0.0-beta.5:
-  version "16.0.0-beta.5"
-  resolved "http://r.cnpmjs.org/react/download/react-16.0.0-beta.5.tgz#b4abba9bce7db72c30633db54a148614b6574e79"
+react@16.0.0-alpha.12:
+  version "16.0.0-alpha.12"
+  resolved "http://r.cnpmjs.org/react/download/react-16.0.0-alpha.12.tgz#8c59485281485df319b6f77682d8dd0621c08194"
   dependencies:
+    create-react-class "^15.5.2"
     fbjs "^0.8.9"
     loose-envify "^1.1.0"
     object-assign "^4.1.0"

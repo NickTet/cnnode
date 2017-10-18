@@ -1,55 +1,84 @@
 /**
- * Created by zhangjing on 2017/10/18.
+ * Created by marno on 2017/4/13
+ * Function:
+ * Desc:
  */
-import React,{PureComponent} from 'react'
-import QRCodeScanner from 'react-native-qrcode-scanner';
+
+'use strict';
+import React, {Component} from "react";
+import {Text, View,StyleSheet} from "react-native";
+import {QRScannerView} from 'ac-qrcode';
 import {connect} from 'dva/mobile'
-import {
-    AppRegistry,
-    StyleSheet,
-    Text,
-    NavigatorIOS,
-    TouchableOpacity,
-    Linking,
-} from 'react-native';
-class Scan extends PureComponent{
-    constructor(props){
-        super(props);
-        this.state={}
+import {ImageButton} from "../../../components/ImageButton";
+import Colors from "../../../utils/Colors";
+
+
+class ScanScreen extends Component {
+    render() {
+        return (
+
+            < QRScannerView
+                onScanResultReceived={this.barcodeReceived.bind(this)}
+
+                renderTopBarView={() => this._renderTitleBar()}
+
+                renderBottomMenuView={() => this._renderMenu()}
+            />
+        )
     }
-    onSuccess(e) {
-        // Linking.openURL(e.data).catch(err => console.error('An error occured', err));
-        // const {}=e.data
-        this._onLogin(e.data)
-        const {navigation}=this.props
-        navigation.goBack("Tabs")
+
+    _renderTitleBar(){
+        return(
+            <Text
+                style={{color:'white',textAlignVertical:'center', textAlign:'center',font:20,padding:12}}
+            ></Text>
+        );
     }
-    render(){
-       return(
-           <QRCodeScanner style={{flex:1}}
-                          onRead={this.onSuccess.bind(this)}/>
-       )
+
+    _renderMenu() {
+        return (
+            <Text
+                style={{color:'white',textAlignVertical:'center', textAlign:'center',font:20,padding:12}}
+            ></Text>
+        )
     }
     _onLogin=(accesstoken)=>{
         if (!accesstoken)return
         this.props.login({accesstoken})
     }
-}
-function mapStateToProps(state) {
-    const {scanlogin}=state.zone;
-    return {scanlogin}
-}
 
+    barcodeReceived(e) {
+        this._onLogin(e.data)
+        const {navigation}=this.props
+        navigation.goBack("Tabs")
+    }
+}
 function mapDispatchToProps(dispatch) {
     return{
         login(params){
-            dispatch({
-                type: 'zone/login',
-                payload: params,
-            })
-        },
-
+            dispatch(
+                {type: 'zone/login', payload: params}
+            );
+        }
     }
-
 }
-export default connect(mapStateToProps,mapDispatchToProps)(Scan)
+function mapStateToProps(state) {
+    const {scanlogin} =state.zone;
+    return {scanlogin}
+}
+const Styles= StyleSheet.create({
+    image_camera: {
+        height: 30,
+        width: 30,
+        position:'absolute',
+        right:16,
+        bottom:16,
+    },
+    image_top_close: {
+        height: 28,
+        width: 28,
+        resizeMode: 'contain',
+        margin:16,
+    }
+})
+export default connect(mapStateToProps,mapDispatchToProps)(ScanScreen)
