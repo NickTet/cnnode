@@ -27,6 +27,10 @@ class Login extends PureComponent{
         if (!accesstoken)return
         this.props.login({accesstoken})
     }
+    _scanLogin=()=>{
+        const {navigate}=this.props.navigation
+        navigate("Scan")
+    }
     render(){
         const { loading, navigation } = this.props
         return(
@@ -45,6 +49,9 @@ class Login extends PureComponent{
                 </View>
                 <TouchableOpacity style={styles.loginBtn} onPress={() => { this._onLogin(this.state.text) }}>
                     <Text style={styles.login}>登录</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.loginBtn} onPress={() => { this._scanLogin() }}>
+                    <Text style={styles.login}>扫码登录</Text>
                 </TouchableOpacity>
             </View>
         )

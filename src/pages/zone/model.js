@@ -12,6 +12,7 @@ export default {
         other_data: {},
         setting: { draft: true, notic: true },
         loading: false,
+        scanlogin:''
     },
     effects: {
         *init({payload = {}}, {select, call, put}) {
@@ -123,6 +124,7 @@ export default {
             'cleanInfo'(state) {
                 return { ...state, info: {} };
             },
+
         },
         subscriptions: {
 

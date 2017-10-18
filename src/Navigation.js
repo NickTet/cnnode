@@ -14,6 +14,7 @@ import Collect from './pages/zone/screen/Collect'
 import Credits from './pages/zone/screen/Credits'
 import Personal from './pages/zone/screen/Personal'
 import Center from './pages/zone/screen/Center'
+import Scan from './pages/zone/screen/Scan'
 import { StackNavigator, TabNavigator, TabBarBottom } from 'react-navigation';
 import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
 
@@ -49,6 +50,7 @@ const Navigation=StackNavigator({
     Personal:{screen:Personal},
     Publish:{screen:Publish},
     Center:{screen:Center},
+    Scan:{screen:Scan},
 
 },{
     initialRouteName:'Tabs',

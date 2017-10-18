@@ -3987,6 +3987,12 @@ react-native:
     xmldoc "^0.4.0"
     yargs "^6.4.0"
 
+react-native-camera@^0.10.0:
+  version "0.10.0"
+  resolved "http://r.cnpmjs.org/react-native-camera/download/react-native-camera-0.10.0.tgz#5d973c9a8aab95f68aede395ba310eae0c3cecdd"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-communications@2.2.1:
   version "2.2.1"
   resolved "http://r.cnpmjs.org/react-native-communications/download/react-native-communications-2.2.1.tgz#7883b56b20a002eeb790c113f8616ea8692ca795"
@@ -4049,6 +4055,12 @@ react-native-lightbox@oblador/react-native-lightbox#c84a8543d4511fe6a44c3d782074
 react-native-parsed-text@0.0.18:
   version "0.0.18"
   resolved "http://r.cnpmjs.org/react-native-parsed-text/download/react-native-parsed-text-0.0.18.tgz#b528eb6f1410f552d2e3fd8d80da7ff0a7890c71"
+
+react-native-qrcode-scanner@0.0.22:
+  version "0.0.22"
+  resolved "http://r.cnpmjs.org/react-native-qrcode-scanner/download/react-native-qrcode-scanner-0.0.22.tgz#b045d6ba6413bd379008e6e5aff047e6fbaa95ae"
+  dependencies:
+    prop-types "^15.5.10"
 
 react-native-scrollable-mixin@^1.0.1:
   version "1.0.1"
