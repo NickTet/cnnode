@@ -46,7 +46,7 @@ class Zone extends PureComponent {
             <View style={styles.rowList}>
                 <TouchableOpacity onPress={()=>{
                     if(isLogin){
-                        navigate('Dynamic',{ title: '最近回复', data: user.recent_replies })
+                        navigate('Dynamic',{ title: '最近回复', data: data.recent_replies })
                     }else {
                          navigate('Login')
                     }
@@ -62,7 +62,7 @@ class Zone extends PureComponent {
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{
                     if(isLogin){
-                        navigate('Dynamic',{ title: '最新发布', data: user.recent_topics })
+                        navigate('Dynamic',{ title: '最新发布', data: data.recent_topics })
                     }else {
                          navigate('Login')
                     }
