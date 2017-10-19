@@ -46,11 +46,22 @@ class ScanScreen extends Component {
         if (!accesstoken)return
         this.props.login({accesstoken})
     }
+    _ontoken=(accesstoken)=>{
+        if (!accesstoken)return
+        this.props.token(accesstoken)
+    }
 
     barcodeReceived(e) {
-        this._onLogin(e.data)
+         // this._ontoken(e.data)
+        console.log("***********"+JSON.stringify(this.props))
         const {navigation}=this.props
-        navigation.goBack("Tabs")
+        const {state}=navigation;
+        const setToken=this.props.navigation.state.params.onGoBack();
+        if (typeof setToken ==="function"){
+            setToken(e.data)
+        }
+
+        navigation.goBack(null)
     }
 }
 function mapDispatchToProps(dispatch) {
@@ -58,6 +69,11 @@ function mapDispatchToProps(dispatch) {
         login(params){
             dispatch(
                 {type: 'zone/login', payload: params}
+            );
+        },
+        token(params){
+            dispatch(
+                {type: 'home/token', payload: params}
             );
         }
     }

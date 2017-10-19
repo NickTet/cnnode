@@ -76,6 +76,7 @@ export default {
             AsyncStorage.removeItem('webim_accesstoken')
             yield put({ type: 'home/isLogin', payload: false })
             yield put({ type: 'home/clean', payload: true });
+            yield put({ type: 'home/token', payload: '' });
             yield put({ type: 'notice/clean', payload: true });
             yield put({ type: 'clean', payload: true });
             yield call(service.logout);

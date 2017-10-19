@@ -18,7 +18,10 @@ class Login extends PureComponent{
         }
     }
     componentWillReceiveProps(next){
+        console.log(">>>>>>>>>componentWillReceiveProps")
         const {data,navigation}=this.props;
+        const {accesstoken}=this.props;
+        this.setState({ text:accesstoken })
         if (next.data&&next.data!==data){
             navigation.goBack()
         }
@@ -29,7 +32,12 @@ class Login extends PureComponent{
     }
     _scanLogin=()=>{
         const {navigate}=this.props.navigation
-        navigate("Scan")
+        navigate("Scan",{
+            onGoBack: () => this.setToken,
+        })
+    }
+    setToken=(accesstoken)=>{
+        this.setState({ text:accesstoken })
     }
     render(){
         const { loading, navigation } = this.props
@@ -71,6 +79,12 @@ function mapDispatchToProps(dispatch) {
                 payload: params,
             });
         },
+        token(params){
+            dispatch({
+                type: 'home/token',
+                payload: params,
+            });
+        }
     }
 }
 const styles=StyleSheet.create({
